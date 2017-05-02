@@ -1,0 +1,36 @@
+<h2>Listing artworks</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th>Etsy link</th>
+      <th>Ebay link</th>
+      <th>Artist</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for artwork <- @artworks do %>
+    <tr>
+      <td><%= artwork.name %></td>
+      <td><%= artwork.description %></td>
+      <td><%= artwork.price %></td>
+      <td><%= artwork.etsy_link %></td>
+      <td><%= artwork.ebay_link %></td>
+      <td><%= artwork.artist_id %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: admin_artist_artwork_path(@conn, :show, @artist, artwork), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: admin_artist_artwork_path(@conn, :edit, @artist, artwork), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: admin_artist_artwork_path(@conn, :delete, @artist, artwork), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New artwork", to: admin_artist_artwork_path(@conn, :new, @artist) %>

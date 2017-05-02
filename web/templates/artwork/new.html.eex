@@ -1,0 +1,6 @@
+<h2>New artwork</h2>
+
+<%= render "form.html", changeset: @changeset,
+                        action: admin_artist_artwork_path(@conn, :create, @artist) %>
+
+<%= link "Back", to: admin_artist_artwork_path(@conn, :index, @artist) %>

@@ -1,0 +1,38 @@
+<h2>Show artwork</h2>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @artwork.name %>
+  </li>
+
+  <li>
+    <strong>Description:</strong>
+    <%= @artwork.description %>
+  </li>
+
+  <li>
+    <strong>Price:</strong>
+    <%= @artwork.price %>
+  </li>
+
+  <li>
+    <strong>Etsy link:</strong>
+    <%= @artwork.etsy_link %>
+  </li>
+
+  <li>
+    <strong>Ebay link:</strong>
+    <%= @artwork.ebay_link %>
+  </li>
+
+  <li>
+    <strong>Artist:</strong>
+    <%= @artwork.artist_id %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: admin_artist_artwork_path(@conn, :edit, @artwork, @artist) %>
+<%= link "Back", to: admin_artist_artwork_path(@conn, :index, @artist) %>
