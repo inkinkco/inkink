@@ -58,4 +58,9 @@ config :logger, level: :info
 
 # Finally import the config/prod.secret.exs
 # which should be versioned separately.
-import_config "prod.secret.exs"
+config :inkink, Inkink.Repo,
+  adapter: Ecto.Adapters.Postgres,
+  url: System.get_env("DATABASE_URL"),
+  hostname: "localhost",
+  ssl: true,
+  pool_size: 19
