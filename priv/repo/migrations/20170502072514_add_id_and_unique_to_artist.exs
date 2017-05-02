@@ -4,7 +4,8 @@ defmodule Inkink.Repo.Migrations.AddIdAndUniqueToArtist do
   def change do
     create unique_index(:artists, [:username])
     alter table(:artists) do
-      modify :id, :binary_id
+      remove :id
+      add :id, :binary_id
     end
   end
 end
