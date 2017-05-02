@@ -4,8 +4,9 @@ defmodule Inkink.Avatar do
 
   @versions [:original]
   @acl :public_read
+  @async false
 
-  def __storage, do: Arc.Ecto.Storage
+  def __storage, do: Arc.Storage.Local
 
   # To add a thumbnail version:
   # @versions [:original, :thumb]
@@ -21,12 +22,12 @@ defmodule Inkink.Avatar do
   # end
 
   # Override the persisted filenames:
-  # def filename(version, _) do
-  #   version
-  # end
+  def filename(_version, _) do
+    Ecto.UUID.generate
+  end
 
   # Override the storage directory:
-  def storage_dir(version, {file, scope}) do
+  def storage_dir(_version, {_file, scope}) do
      "priv/static/uploads/user/avatars/#{scope.id}"
   end
 
