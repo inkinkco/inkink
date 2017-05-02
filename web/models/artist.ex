@@ -1,6 +1,8 @@
 defmodule Inkink.Artist do
   use Inkink.Web, :model
 
+  @primary_key {:id, :binary_id, autogenerate: true}
+  @foreign_key_type :binary_id
   schema "artists" do
     field :name, :string
     field :state, :string
@@ -11,12 +13,10 @@ defmodule Inkink.Artist do
     timestamps()
   end
 
-  @doc """
-  Builds a changeset based on the `struct` and `params`.
-  """
   def changeset(struct, params \\ %{}) do
     struct
     |> cast(params, [:name, :state, :country, :description, :username])
-    |> validate_required([:name, :state, :country, :description, :username])
+    |> validate_required([:name, :username])
+    |> unique_constraint(:username)
   end
 end

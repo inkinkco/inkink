@@ -20,7 +20,7 @@ defmodule Inkink.ArtistController do
       {:ok, _artist} ->
         conn
         |> put_flash(:info, "Artist created successfully.")
-        |> redirect(to: artist_path(conn, :index))
+        |> redirect(to: admin_artist_path(conn, :index))
       {:error, changeset} ->
         render(conn, "new.html", changeset: changeset)
     end
@@ -45,7 +45,7 @@ defmodule Inkink.ArtistController do
       {:ok, artist} ->
         conn
         |> put_flash(:info, "Artist updated successfully.")
-        |> redirect(to: artist_path(conn, :show, artist))
+        |> redirect(to: admin_artist_path(conn, :show, artist))
       {:error, changeset} ->
         render(conn, "edit.html", artist: artist, changeset: changeset)
     end
@@ -60,6 +60,6 @@ defmodule Inkink.ArtistController do
 
     conn
     |> put_flash(:info, "Artist deleted successfully.")
-    |> redirect(to: artist_path(conn, :index))
+    |> redirect(to: admin_artist_path(conn, :index))
   end
 end

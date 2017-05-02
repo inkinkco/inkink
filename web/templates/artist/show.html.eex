@@ -29,5 +29,5 @@
 
 </ul>
 
-<%= link "Edit", to: artist_path(@conn, :edit, @artist) %>
-<%= link "Back", to: artist_path(@conn, :index) %>
+<p> <%= link "Edit", to: admin_artist_path(@conn, :edit, @artist) %> </p>
+<p> <%= link "Back", to: admin_artist_path(@conn, :index) %> </p>
