@@ -9,14 +9,20 @@ defmodule Inkink.Router do
     plug :put_secure_browser_headers
   end
 
+  pipeline :shop_layout do
+    plug :put_layout, {Inkink.Shop.LayoutView, "app.html"}
+  end
+
   pipeline :api do
     plug :accepts, ["json"]
   end
 
   scope "/", Inkink do
-    pipe_through :browser # Use the default browser stack
+    pipe_through [:browser, :shop_layout]
 
-    get "/", PageController, :index
+    get "/", Shop.PageController, :index
+    get "/artists", Shop.ArtistController, :index
+    get "/artist/:artist_id", Shop.ArtistController, :show
   end
 
   # Other scopes may use custom stacks.
