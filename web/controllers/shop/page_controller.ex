@@ -1,4 +1,4 @@
-defmodule Inkink.PageController do
+defmodule Inkink.Shop.PageController do
   use Inkink.Web, :controller
 
   def index(conn, _params) do

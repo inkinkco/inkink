@@ -10,7 +10,7 @@
       <div class="container">
         <div class="header-content">
           <div class="header-left">
-            <a href="index.html" class="logo">
+            <a href="<%= page_path(@conn, :index) %>" class="logo">
               <img src="<%= static_path(@conn, "/images/logo/inkink-logo-white.png") %>">
             </a>
           </div>
@@ -20,7 +20,7 @@
               <a href="#" class="button">Artworks</a>
             </div>
             <div class="option">
-              <a href="artists.html" class="button">Artists</a>
+              <a href="<%= artist_path(@conn, :index) %>" class="button">Artists</a>
             </div>
             <div class="option">
               <a href="#" class="button">Events</a>
