@@ -8,7 +8,6 @@
       <th>Price</th>
       <th>Etsy link</th>
       <th>Ebay link</th>
-      <th>Artist</th>
 
       <th></th>
     </tr>
@@ -21,7 +20,6 @@
       <td><%= artwork.price %></td>
       <td><%= artwork.etsy_link %></td>
       <td><%= artwork.ebay_link %></td>
-      <td><%= artwork.artist_id %></td>
 
       <td class="text-right">
         <%= link "Show", to: admin_artist_artwork_path(@conn, :show, @artist, artwork), class: "btn btn-default btn-xs" %>
