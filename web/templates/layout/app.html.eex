@@ -1,35 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>Hello Inkink!</title>
+    <title>Inkink</title>
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
   </head>
 
   <body>
-    <div class="container">
-      <header class="header">
-        <nav role="navigation">
-          <ul class="nav nav-pills pull-right">
-            <li><a href="http://www.phoenixframework.org/docs">Get Started</a></li>
-          </ul>
-        </nav>
-        <span class="logo"></span>
-      </header>
+    <div class="header section">
+      <div class="container">
+        <div class="header-content">
+          <div class="header-left">
+            <a href="index.html" class="logo">
+              <img src="<%= static_path(@conn, "/images/logo/inkink-logo-white.png") %>">
+            </a>
+          </div>
+          <div class="header-right">
+          <div class="navbar-options">
+            <div class="option">
+              <a href="#" class="button">Artworks</a>
+            </div>
+            <div class="option">
+              <a href="artists.html" class="button">Artists</a>
+            </div>
+            <div class="option">
+              <a href="#" class="button">Events</a>
+            </div>
+            <div class="option">
+              <a href="#" class="button">About</a>
+            </div>
+            <div class="option">
+              <a href="#" class="button button-primary">Sign In</a>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-      <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
-      <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
+    <%= render @view_module, @view_template, assigns %>
 
-      <main role="main">
-        <%= render @view_module, @view_template, assigns %>
-      </main>
+    <!-- Footer -->
+    <div class="footer section">
+      <div class="container">
+        <div class="footer-row content">
+          <div class="footer-column">
+            <h6 class="heading heading-left">About Us</h6>
+            <p class="about-us">
+              Our company offer high-end collectibles such as art prints, sketch books and one of a kind original art pieces &#8211; created by some of the world&#8217;s top artists.
+            </p>
+          </div>
+          <div class="footer-column">
+            <h6 class="heading heading-left">Contact Us</h6>
+            <a class="contact-info" href="https://www.facebook.com/inkink.art/">
+              <i class="icon ion-social-facebook"></i>
+              <span class="link">facbook.com/inkink.art/</span>
+            </a>
+            <a class="contact-info" href="mailto:inkink.art@gmail.com">
+              <i class="icon ion-email"></i>
+              <span class="link">inkink.art@gmail.com</span>
+            </a>
+          </div>
+          <div class="footer-column">
+            <h6 class="heading heading-left">Locate Us</h6>
+            <div class="location-info">
+              <i class="icon ion-ios-location"></i>
+              <span class="link">231 Bain Street, Bras Basah Complex #02-85 Singapore</span>
+            </div>
+          </div>
+        </div>
+      </div>
 
-    </div> <!-- /container -->
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
   </body>
 </html>

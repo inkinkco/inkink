@@ -1,36 +1,247 @@
-<div class="jumbotron">
-  <h2><%= gettext "Welcome to %{name}", name: "Phoenix!" %></h2>
-  <p class="lead">A productive web framework that<br />does not compromise speed and maintainability.</p>
-</div>
+  <!-- Hero -->
+  <div class="hero-section section"
 
-<div class="row marketing">
-  <div class="col-lg-6">
-    <h4>Resources</h4>
-    <ul>
-      <li>
-        <a href="http://phoenixframework.org/docs/overview">Guides</a>
-      </li>
-      <li>
-        <a href="https://hexdocs.pm/phoenix">Docs</a>
-      </li>
-      <li>
-        <a href="https://github.com/phoenixframework/phoenix">Source</a>
-      </li>
-    </ul>
+    style="background-image: url(<%= static_path(@conn, "/images/hero/1.jpg") %>);">
+    <div class="container">
+      <div class="hero-content content">
+        <h1 class="heading heading-left">
+          Inkink Collectibles at Doujin Market 2017
+        </h1>
+        <div class="excerpt">
+          <p>
+            We will be exhibiting at this year Doujin Market 2017 at Suntec Singapore Convention and Exhibition Centre's Level 3 Concourse from 6-7 May!
+          </p>
+          <p>
+            Catch amazing artists in our booth doing what they do best with their mastery in digital illustration. Don't miss out.
+          </p>
+        </div>
+        <a href="#" class="button button-primary">Read More</a>
+      </div>
+    </div>
   </div>
 
-  <div class="col-lg-6">
-    <h4>Help</h4>
-    <ul>
-      <li>
-        <a href="http://groups.google.com/group/phoenix-talk">Mailing list</a>
-      </li>
-      <li>
-        <a href="http://webchat.freenode.net/?channels=elixir-lang">#elixir-lang on freenode IRC</a>
-      </li>
-      <li>
-        <a href="https://twitter.com/elixirphoenix">@elixirphoenix</a>
-      </li>
-    </ul>
+  <!-- Artworks -->
+  <div class="artworks-section section section-center">
+    <div class="container">
+      <div class="artworks-content content">
+        <h2 class="heading">
+          Browse our Collection
+        </h2>
+        <div class="artwork-collage">
+          <div class="artwork">
+            <div class="inner" 
+              style="background-image:url(<%= static_path(@conn, "/images/artwork/1.jpg") %>);"> 
+            </div>
+          </div>
+          <div class="artwork">
+            <div class="inner" 
+              style="background-image:url(<%= static_path(@conn, "/images/artwork/2.jpg") %>);"> 
+            </div>
+          </div>
+          <div class="artwork">
+            <div class="inner" 
+              style="background-image:url(<%= static_path(@conn, "/images/artwork/3.jpg") %>);"> 
+            </div>
+          </div>
+          <div class="artwork">
+            <div class="inner" 
+              style="background-image:url(<%= static_path(@conn, "/images/artwork/4.jpg") %>);"> 
+            </div>
+          </div>
+          <div class="artwork">
+            <div class="inner" 
+              style="background-image:url(<%= static_path(@conn, "/images/artwork/5.jpg") %>);"> 
+            </div>
+          </div>
+          <div class="artwork">
+            <div class="inner" 
+              style="background-image:url(<%= static_path(@conn, "/images/artwork/6.jpg") %>);"> 
+            </div>
+          </div>
+          <div class="artwork">
+            <div class="inner" 
+              style="background-image:url(<%= static_path(@conn, "/images/artwork/7.jpg") %>);"> 
+            </div>
+          </div>
+          <div class="artwork">
+            <div class="inner" 
+              style="background-image:url(<%= static_path(@conn, "/images/artwork/8.jpg") %>);"> 
+            </div>
+          </div>
+          <div class="artwork">
+            <div class="inner" 
+              style="background-image:url(<%= static_path(@conn, "/images/artwork/9.jpg") %>);"> 
+            </div>
+          </div>
+          <div class="artwork">
+            <div class="inner" 
+                 style="background-image:url(<%= static_path(@conn, "/images/artwork/10.jpg") %>);">
+            </div>
+          </div>
+          <div class="artwork">
+            <div class="inner" 
+              style="background-image:url(<%= static_path(@conn, "/images/artwork/11.jpg") %>);">  
+            </div>
+          </div>
+          <div class="artwork">
+            <div class="inner" 
+              style="background-image:url(<%= static_path(@conn, "/images/artwork/12.jpg") %>);">  
+            </div>
+          </div>
+        </div>
+        <a href="#" class="button button-primary">View Artworks</a>
+      </div>
+    </div>
   </div>
-</div>
+
+  <!-- Artists -->
+  <div class="artists-section section section-center">
+    <div class="container">
+      <div class="artists-content content">
+        <h2 class="heading">
+          Meet our Artists
+        </h2>
+        <div class="artist-roster">
+          <div class="artist">
+            <div class="photo">
+              <img src="<%= static_path(@conn, "/images/artists/1.jpg") %>">
+            </div>
+            <h4 class="name">
+              <a href="#"> Name </a>
+            </h4>
+            <div class="country">
+              State, Country
+            </div>
+            <div class="handle">
+              @handle
+            </div>
+          </div>
+          <div class="artist">
+            <div class="photo">
+              <img src="<%= static_path(@conn, "/images/artists/2.jpg") %>">
+            </div>
+            <h4 class="name">
+              <a href="#"> Name </a>
+            </h4>
+            <div class="country">
+              State, Country
+            </div>
+            <div class="handle">
+              @handle
+            </div>
+          </div>
+          <div class="artist">
+            <div class="photo">
+              <img src="<%= static_path(@conn, "/images/artists/3.jpg") %>">
+            </div>
+            <h4 class="name">
+              <a href="#"> Name </a>
+            </h4>
+            <div class="country">
+              State, Country
+            </div>
+            <div class="handle">
+              @handle
+            </div>
+          </div>
+          <div class="artist">
+            <div class="photo">
+              <img src="<%= static_path(@conn, "/images/artists/4.jpg") %>">
+            </div>
+            <h4 class="name">
+              <a href="#"> Name </a>
+            </h4>
+            <div class="country">
+              State, Country
+            </div>
+            <div class="handle">
+              @handle
+            </div>
+          </div>
+        </div>
+        <a href="#" class="button button-primary">Discover Artists</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Events -->
+  <div class="events-section section section-center">
+    <div class="container">
+      <div class="events-content content">
+        <h2 class="heading">
+          Upcoming Events
+        </h2>
+        <div class="event-cards">
+          <div class="event">
+            <div class="event-info">
+              <div class="event-details">
+                <div class="date">
+                  <div class="month">
+                    DEC
+                  </div>
+                  <div class="day">
+                    21
+                  </div>
+                </div>
+                <div class="name">
+                  Rainbow Candy Girls : Inkink Art Exhibition 
+                </div>
+              </div>
+              <div class="event-image" style="background-image:url(<%= static_path(@conn, "/images/events/1.jpg") %>")> 
+              </div>
+            </div>
+            <div class="event-background">
+              
+            </div>
+          </div>
+          <div class="event">
+            <div class="event-info">
+              <div class="event-details">
+                <div class="date">
+                  <div class="month">
+                    DEC
+                  </div>
+                  <div class="day">
+                    21
+                  </div>
+                </div>
+                <div class="name">
+                  Rainbow Candy Girls : Inkink Art Exhibition 
+                </div>
+              </div>
+              <div class="event-image"
+                style="background-image:url(<%= static_path(@conn, "/images/events/2.jpg") %>")> 
+              </div>
+            </div>
+            <div class="event-background">
+              
+            </div>
+          </div>
+          <div class="event">
+            <div class="event-info">
+              <div class="event-details">
+                <div class="date">
+                  <div class="month">
+                    DEC
+                  </div>
+                  <div class="day">
+                    21
+                  </div>
+                </div>
+                <div class="name">
+                  Rainbow Candy Girls : Inkink Art Exhibition 
+                </div>
+              </div>
+              <div class="event-image"
+                style="background-image:url(<%= static_path(@conn, "/images/events/3.jpg") %>">
+              </div>
+            </div>
+            <div class="event-background">
+              
+            </div>
+          </div>
+        </div>
+        <a href="#" class="button button-primary">See More Events</a>
+      </div>
+    </div>
+  </div>

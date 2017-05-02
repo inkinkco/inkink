@@ -1,0 +1,139 @@
+/* Hero Section */
+
+.hero-section {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero-section > .container {
+  display: flex;
+}
+
+.hero-content {
+  flex: 0 1 50%;
+  margin: 160px 0;
+}
+
+.hero-content > .excerpt {
+  margin-bottom: 48px;
+}
+
+
+/* Artowork Section */
+
+.artwork-collage {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+}
+
+.artwork {
+  flex: 0 0 25%;
+}
+
+.artwork > .inner {
+  padding-top: 80%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+/* Artist Section */
+
+.artist-roster {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.artist-roster > .artist {
+  flex: 0 0 22%;
+  margin-bottom: 24px;
+}
+
+.artist-roster > .artist > .name {
+  margin-bottom: 8px;
+}
+
+.artist-roster > .artist > .photo {
+  margin-bottom: 16px;
+}
+
+.artist-roster > .artist > .country,
+.artist-roster > .artist > .handle {
+  color: #999999;
+}
+
+.artist-roster > .artist > .photo > img {
+  border-radius: 100%;
+}
+
+
+/* Events Section */
+
+.event-cards {
+  width: 100%;
+  margin-bottom: 32px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.event-cards > .event {
+  flex: 0 1 31%;
+  width: 100%;
+  position: relative;
+}
+
+.event-info {
+  width: calc(100% - 8px);
+  margin: 0 8px 8px 0;
+  background: #333333;
+}
+
+.event-background {
+  position: absolute;
+  width: calc(100% - 8px);
+  height: calc(100% - 8px);
+  top: 8px;
+  left: 8px;
+  background: #1EC8BE;
+  z-index: -8;
+}
+
+.event-details {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.event-details > .date,
+.event-details > .name {
+  padding: 12px 8px;
+}
+
+.event-details > .date {
+  line-height: 20px;
+  min-width: 56px;
+  font-weight: 700;
+}
+
+.event-details > .name {
+  flex: 1;
+  text-align: left;
+}
+
+.event-details > .date > .day {
+  font-size: 27px;
+  line-height: 27px;
+}
+
+.event-image {
+  height: 160px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}

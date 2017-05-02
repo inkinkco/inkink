@@ -1,0 +1,68 @@
+/* Artist Section */
+
+.artist-roster {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.artist-roster > .artist {
+  flex: 0 0 49%;
+  margin-bottom: 24px;
+}
+
+.artist-container {
+  padding: 16px;
+  background-color: #292929;
+}
+
+.artist-details {
+  display: flex;
+  margin-bottom: 16px;
+}
+
+.artist-details > .photo {
+  flex: 0 0 120px;
+}
+
+.artist-details > .info {
+  flex: 1;
+  padding: 16px;
+  padding-left: 24px;
+}
+
+.artist-details > .info > .name {
+  margin-bottom: 8px;
+}
+
+.artist-details > .info > .name:hover {
+  text-decoration: underline;
+}
+
+.artist-details > .info > .country,
+.artist-details > .info > .handle {
+  color: #999999;
+}
+
+.artist-details .photo > img {
+  border-radius: 100%;
+  width: 120px;
+}
+
+/* Artwork */
+
+.artist-artworks {
+  display: flex;
+}
+
+.artwork {
+  flex: 1;
+}
+
+.artwork > .inner {
+  padding-top: 80%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
