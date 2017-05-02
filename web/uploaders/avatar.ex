@@ -1,10 +1,9 @@
 defmodule Inkink.Avatar do
   use Arc.Definition
-
-  # Include ecto support (requires package arc_ecto installed):
   use Arc.Ecto.Definition
 
   @versions [:original]
+  @acl :public_read
 
   def __storage, do: Arc.Ecto.Storage
 
@@ -28,7 +27,7 @@ defmodule Inkink.Avatar do
 
   # Override the storage directory:
   def storage_dir(version, {file, scope}) do
-     "web/static/uploads/user/avatars/#{scope.id}"
+     "priv/static/uploads/user/avatars/#{scope.id}"
   end
 
   # Provide a default URL if there hasn't been a file uploaded
