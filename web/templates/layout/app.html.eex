@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Inkink</title>
+    <link rel="stylesheet" href="<%= static_path(@conn, "/css/admin.app.css") %>">
+  </head>
+
+  <body>
+    <div class="container">
+      <%= render @view_module, @view_template, assigns %>
+    </div>
+    <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
+  </body>
+</html>
