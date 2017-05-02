@@ -34,7 +34,12 @@ defmodule Inkink.ArtistController do
   def edit(conn, %{"id" => id}) do
     artist = Repo.get!(Artist, id)
     changeset = Artist.changeset(artist)
-    render(conn, "edit.html", artist: artist, changeset: changeset)
+
+    if is_nil(artist) do
+      redirect(conn, to: admin_artist_path(conn, :index))
+    else
+      render(conn, "edit.html", artist: artist, changeset: changeset)
+    end
   end
 
   def update(conn, %{"id" => id, "artist" => artist_params}) do
