@@ -26,15 +26,14 @@ defmodule Inkink.ArtworkController do
       |> Repo.get(artist_id)
       |> Repo.preload(:artworks)
 
-    price = Map.get(artwork_params, "price") |> Decimal.new
-		artwork_params =
-      artwork_params
-      |> Map.new(fn {k, v} -> {String.to_atom(k), v} end)
-      |> Map.put(:price, price)
-    changeset = Ecto.build_assoc(artist, :artworks, artwork_params)
+    changeset =
+      Artwork.changeset(%Artwork{}, artwork_params)
+      |> Map.get(:changes)
 
-    case Repo.insert(changeset) do
-      {:ok, _artwork} ->
+    changes = build_assoc(artist, :artworks, changeset)
+
+    case Repo.insert(changes) do
+      {:ok, artwork} ->
         conn
         |> put_flash(:info, "Artwork created successfully.")
         |> redirect(to: admin_artist_artwork_path(conn, :index, artist))

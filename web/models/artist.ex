@@ -27,8 +27,4 @@ defmodule Inkink.Artist do
     |> validate_required([:name, :username])
     |> unique_constraint(:username)
   end
-
-  def avatar_changeset(struct, params \\ %{}) do
-    struct |> cast_attachments(params, [:avatar])
-  end
 end
