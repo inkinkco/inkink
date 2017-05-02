@@ -25,6 +25,12 @@ defmodule Inkink.Router do
     get "/artist/:artist_id", Shop.ArtistController, :show
   end
 
+  scope "/admin", Inkink, as: :admin do
+    pipe_through [:browser]
+
+    resources "/artists", ArtistController
+  end
+
   # Other scopes may use custom stacks.
   # scope "/api", Inkink do
   #   pipe_through :api

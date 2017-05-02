@@ -20,9 +20,13 @@ exports.config = {
       // }
     },
     stylesheets: {
-      joinTo: "css/app.css",
-      order: {
-        after: ["web/static/css/app.css"] // concat app.css last
+      joinTo: {
+        "css/shop.app.css": [
+          "web/static/css/shop/*.css"
+        ],
+        "css/admin.app.css": [
+          "web/static/css/phoenix.css"
+        ]
       }
     },
     templates: {
