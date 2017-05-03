@@ -35,7 +35,7 @@
             </div>
           </div>
         </div>
-        <div class="artist-artworks">
+        <div class="artist-artworks-list">
           <div class="artwork"> 
             <a href="#" class="artwork-container">
               <div class="photo"

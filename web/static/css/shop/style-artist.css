@@ -18,23 +18,23 @@
   background-color: #292929;
 }
 
-.artist-details {
+.artist-container > .artist-details {
   display: flex;
   margin-bottom: 16px;
   flex-direction: column;
   text-align: center;
 }
 
-.artist-details > .photo {
+.artist-container > .artist-details > .photo {
   flex: 1;
 }
 
-.artist-details > .info {
+.artist-container > .artist-details > .info {
   flex: 1;
   padding: 16px;
 }
 
-.artist-details > .info:after {
+.artist-container > .artist-details > .info:after {
   content: '';
   background-color: #1EC8BE;
   width: 100%;
@@ -44,46 +44,46 @@
   margin: 24px auto;
 }
 
-.artist-details > .description {
+.artist-container > .artist-details > .description {
   text-align: left;
 }
 
-.artist-details > .info > .name {
+.artist-container > .artist-details > .info > .name {
   margin-bottom: 8px;
 }
 
-.artist-details > .info > .country,
-.artist-details > .info > .handle {
+.artist-container > .artist-details > .info > .country,
+.artist-container > .artist-details > .info > .handle {
   color: #999999;
 }
 
-.artist-details .photo > img {
+.artist-container > .artist-details .photo > img {
   border-radius: 100%;
   width: 200px;
 }
 
 /* Artwork */
 
-.artist-artworks {
+.artist-artworks-list {
   flex: 0 0 70%;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
 }
 
-.artwork {
+.artist-artworks-list > .artwork {
   flex: 0 0 49%;
   margin-bottom: 16px;
 }
 
-.artwork-container > .photo {
+.artist-artworks-list > .artwork > .artwork-container > .photo {
   padding-top: 80%;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
-.artwork-container > .info {
+.artist-artworks-list > .artwork > .artwork-container > .info {
   padding: 16px;
   background-color: #292929;
 }
