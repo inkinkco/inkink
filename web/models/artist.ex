@@ -20,8 +20,12 @@ defmodule Inkink.Artist do
   def changeset(struct, params \\ %{}) do
     struct
     |> cast(params, [:name, :state, :country, :description, :username])
-    |> cast_attachments(params, [:avatar])
     |> validate_required([:name, :username])
     |> unique_constraint(:username)
+  end
+
+  def avatar_changeset(struct, params \\ %{}) do
+    struct
+    |> cast_attachments(params, [:avatar])
   end
 end

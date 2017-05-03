@@ -34,5 +34,5 @@
 
 </ul>
 
-<%= link "Edit", to: admin_artist_artwork_path(@conn, :edit, @artwork, @artist) %>
+<%= link "Edit", to: admin_artist_artwork_path(@conn, :edit, @artist, @artwork) %>
 <%= link "Back", to: admin_artist_artwork_path(@conn, :index, @artist) %>

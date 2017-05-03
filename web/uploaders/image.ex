@@ -26,7 +26,7 @@ defmodule Inkink.Image do
 
   #Override the storage directory:
   def storage_dir(version, {file, scope}) do
-   "priv/static/uploads/artworks/images/#{scope.id}"
+   "priv/static/images/artwork/images/#{scope.id}"
   end
 
   # Provide a default URL if there hasn't been a file uploaded

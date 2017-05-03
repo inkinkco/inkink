@@ -32,6 +32,7 @@ defmodule Inkink.Mixfile do
   defp deps do
     [{:phoenix, "~> 1.2.1"},
      {:arc, "~> 0.8.0"},
+     {:number, "~> 0.5.1"},
      {:arc_ecto, "~> 0.7.0"},
      {:phoenix_pubsub, "~> 1.0"},
      {:phoenix_ecto, "~> 3.0"},

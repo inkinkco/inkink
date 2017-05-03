@@ -5,123 +5,39 @@
         Artists
       </h2>
       <div class="artist-lineup">
-        <div class="artist">
-          <div class="artist-card">
-            <div class="artist-details">
-              <div class="photo">
-                <img src="<%= static_path(@conn, "/images/artists/1.jpg") %>">
-              </div>
-              <div class="info">
-                <h4 class="name">
-                  <a href="<%= artist_path(@conn, :show, "juan-bartolome") %>">
-                    Juan Bartolome
-                  </a>
-                </h4>
-                <div class="country">
-                  State, Country
+        <%= for artist <- @artists do %>
+          <div class="artist">
+            <div class="artist-card">
+              <div class="artist-details">
+                <div class="photo">
+                  <img src="<%= static_path(@conn, Inkink.Shop.PageView.avatar_url(artist)) %>">
                 </div>
-                <div class="handle">
-                  @handle
+                <div class="info">
+                  <h4 class="name">
+                    <a href="<%= artist_path(@conn, :show, artist) %>">
+                      <%= artist.name %>
+                    </a>
+                  </h4>
+                  <div class="country">
+                    <%= "#{artist.state}, #{artist.country}" %>
+                  </div>
+                  <div class="handle">
+                    <%= "@#{artist.username}" %>
+                  </div>
                 </div>
               </div>
+              <a class="artist-works">
+                <%= for artwork <- artist.artworks do %>
+                  <div class="artwork"> 
+                      <div class="inner"
+                        style="background-image:url(<%= static_path(@conn, Inkink.Shop.PageView.image_url(artwork)) %>);">
+                      </div>
+                  </div>
+                <%= end %>
+              </a>
             </div>
-            <a class="artist-works">
-              <div class="artwork"> 
-                <div class="inner"
-                  style="background-image:url(<%= static_path(@conn, "/images/artwork/1.jpg") %>);">
-                </div>
-              </div>
-              <div class="artwork"> 
-                <div class="inner"
-                  style="background-image:url(<%= static_path(@conn, "/images/artwork/2.jpg") %>);">
-                </div>
-              </div>
-              <div class="artwork"> 
-                <div class="inner"
-                  style="background-image:url(<%= static_path(@conn, "/images/artwork/3.jpg") %>);">
-                </div>
-              </div>
-            </a>
           </div>
-        </div>
-        <div class="artist">
-          <div class="artist-card">
-            <div class="artist-details">
-              <div class="photo">
-                <img src="<%= static_path(@conn, "/images/artists/2.jpg") %>">
-              </div>
-              <div class="info">
-                <h4 class="name">
-                  <a href="<%= artist_path(@conn, :show, "juan-bartolome") %>">
-                    Juan Bartolome
-                  </a>
-                </h4>
-                <div class="country">
-                  State, Country
-                </div>
-                <div class="handle">
-                  @handle
-                </div>
-              </div>
-            </div>
-            <a class="artist-works">
-              <div class="artwork"> 
-                <div class="inner"
-                  style="background-image:url(<%= static_path(@conn, "/images/artwork/4.jpg") %>);">
-                </div>
-              </div>
-              <div class="artwork"> 
-                <div class="inner"
-                  style="background-image:url(<%= static_path(@conn, "/images/artwork/5.jpg") %>);">
-                </div>
-              </div>
-              <div class="artwork"> 
-                <div class="inner"
-                  style="background-image:url(<%= static_path(@conn, "/images/artwork/6.jpg") %>);">
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="artist">
-          <div class="artist-card">
-            <div class="artist-details">
-              <div class="photo">
-                <img src="<%= static_path(@conn, "/images/artists/3.jpg") %>">
-              </div>
-              <div class="info">
-                <h4 class="name">
-                  <a href="<%= artist_path(@conn, :show, "juan-bartolome") %>">
-                    Juan Bartolome
-                  </a>
-                </h4>
-                <div class="country">
-                  State, Country
-                </div>
-                <div class="handle">
-                  @handle
-                </div>
-              </div>
-            </div>
-            <a class="artist-works">
-              <div class="artwork"> 
-                <div class="inner"
-                  style="background-image:url(<%= static_path(@conn, "/images/artwork/7.jpg") %>);">
-                </div>
-              </div>
-              <div class="artwork"> 
-                <div class="inner"
-                  style="background-image:url(<%= static_path(@conn, "/images/artwork/8.jpg") %>);">
-                </div>
-              </div>
-              <div class="artwork"> 
-                <div class="inner"
-                  style="background-image:url(<%= static_path(@conn, "/images/artwork/9.jpg") %>);">
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>
+        <%= end %>
       </div>
     </div>
   </div>
