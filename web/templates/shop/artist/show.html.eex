@@ -40,7 +40,7 @@
                     <%= artwork.name %>
                   </h6>
                   <div class="price">
-                    <%= "USD #{artwork.price}" %>
+                    <%= number_to_currency(artwork.price) %>
                   </div>
                 </div>
               </a>
