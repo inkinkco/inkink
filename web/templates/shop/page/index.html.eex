@@ -28,66 +28,13 @@
           Browse our Collection
         </h2>
         <div class="artwork-collage">
-          <div class="artwork">
-            <div class="inner" 
-              style="background-image:url(<%= static_path(@conn, "/images/artwork/1.jpg") %>);"> 
+          <%= for artwork <- @artworks do %>
+            <div class="artwork">
+              <div class="inner"
+                style="background-image:url(<%= static_path(@conn, image_url(artwork)) %>);">
+              </div>
             </div>
-          </div>
-          <div class="artwork">
-            <div class="inner" 
-              style="background-image:url(<%= static_path(@conn, "/images/artwork/2.jpg") %>);"> 
-            </div>
-          </div>
-          <div class="artwork">
-            <div class="inner" 
-              style="background-image:url(<%= static_path(@conn, "/images/artwork/3.jpg") %>);"> 
-            </div>
-          </div>
-          <div class="artwork">
-            <div class="inner" 
-              style="background-image:url(<%= static_path(@conn, "/images/artwork/4.jpg") %>);"> 
-            </div>
-          </div>
-          <div class="artwork">
-            <div class="inner" 
-              style="background-image:url(<%= static_path(@conn, "/images/artwork/5.jpg") %>);"> 
-            </div>
-          </div>
-          <div class="artwork">
-            <div class="inner" 
-              style="background-image:url(<%= static_path(@conn, "/images/artwork/6.jpg") %>);"> 
-            </div>
-          </div>
-          <div class="artwork">
-            <div class="inner" 
-              style="background-image:url(<%= static_path(@conn, "/images/artwork/7.jpg") %>);"> 
-            </div>
-          </div>
-          <div class="artwork">
-            <div class="inner" 
-              style="background-image:url(<%= static_path(@conn, "/images/artwork/8.jpg") %>);"> 
-            </div>
-          </div>
-          <div class="artwork">
-            <div class="inner" 
-              style="background-image:url(<%= static_path(@conn, "/images/artwork/9.jpg") %>);"> 
-            </div>
-          </div>
-          <div class="artwork">
-            <div class="inner" 
-                 style="background-image:url(<%= static_path(@conn, "/images/artwork/10.jpg") %>);">
-            </div>
-          </div>
-          <div class="artwork">
-            <div class="inner" 
-              style="background-image:url(<%= static_path(@conn, "/images/artwork/11.jpg") %>);">  
-            </div>
-          </div>
-          <div class="artwork">
-            <div class="inner" 
-              style="background-image:url(<%= static_path(@conn, "/images/artwork/12.jpg") %>);">  
-            </div>
-          </div>
+          <%= end %>
         </div>
         <a href="#" class="button button-primary">View Artworks</a>
       </div>

@@ -36,7 +36,7 @@ defmodule Inkink.ArtworkController do
       {:ok, artwork} ->
         conn
         |> put_flash(:info, "Artwork created successfully.")
-        |> redirect(to: admin_artist_artwork_path(conn, :index, artist))
+        |> redirect(to: admin_artist_artwork_path(conn, :index, artist, artwork))
       {:error, changeset} ->
         render(conn, "new.html", changeset: changeset)
     end
@@ -65,7 +65,7 @@ defmodule Inkink.ArtworkController do
       {:ok, artwork} ->
         conn
         |> put_flash(:info, "Artwork updated successfully.")
-        |> redirect(to: admin_artist_artwork_path(conn, :show, artwork, artist))
+        |> redirect(to: admin_artist_artwork_path(conn, :show, artist, artwork))
       {:error, changeset} ->
         render(conn, "edit.html", artwork: artwork, changeset: changeset, artist: artist)
     end
