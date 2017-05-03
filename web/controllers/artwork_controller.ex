@@ -34,6 +34,9 @@ defmodule Inkink.ArtworkController do
 
     case Repo.insert(changes) do
       {:ok, artwork} ->
+        changeset_with_image = Artwork.image_changeset(artwork, artwork_params)
+        Repo.update!(changeset_with_image)
+
         conn
         |> put_flash(:info, "Artwork created successfully.")
         |> redirect(to: admin_artist_artwork_path(conn, :index, artist, artwork))
@@ -59,7 +62,10 @@ defmodule Inkink.ArtworkController do
   def update(conn, %{"id" => id, "artwork" => artwork_params, "artist_id" => artist_id}) do
     artist = Repo.get!(Artist, artist_id)
     artwork = Repo.get!(Artwork, id)
-    changeset = Artwork.changeset(artwork, artwork_params)
+    changeset =
+      artwork
+      |> Artwork.changeset(artwork_params)
+      |> Artwork.image_changeset(artwork_params)
 
     case Repo.update(changeset) do
       {:ok, artwork} ->

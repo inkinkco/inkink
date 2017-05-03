@@ -21,7 +21,11 @@ defmodule Inkink.Artwork do
   def changeset(struct, params \\ %{}) do
     struct
     |> cast(params, [:name, :description, :price, :etsy_link, :ebay_link])
-    |> cast_attachments(params, [:image])
     |> validate_required([:name, :description, :price])
+  end
+
+  def image_changeset(struct, params \\ %{}) do
+    struct
+    |> cast_attachments(params, [:image])
   end
 end
