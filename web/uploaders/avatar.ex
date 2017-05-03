@@ -22,13 +22,13 @@ defmodule Inkink.Avatar do
   # end
 
   # Override the persisted filenames:
-  def filename(_version, _) do
-    Ecto.UUID.generate
-  end
+  # def filename(_version, _) do
+  #   Ecto.UUID.generate
+  # end
 
   # Override the storage directory:
   def storage_dir(_version, {_file, scope}) do
-    "priv/static/uploads/user/avatars/#{scope.id}"
+    "priv/static/images/artist/avatars/#{scope.name}"
   end
 
   # Provide a default URL if there hasn't been a file uploaded

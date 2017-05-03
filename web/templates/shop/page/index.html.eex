@@ -102,64 +102,24 @@
           Meet our Artists
         </h2>
         <div class="artist-roster">
-          <div class="artist">
-            <div class="photo">
-              <img src="<%= static_path(@conn, "/images/artists/1.jpg") %>">
+          <%= for artist <- @artists do %>
+            <div class="artist">
+              <div class="photo">
+                <img src="<%= static_path(@conn, avatar_url(artist)) %>">
+              </div>
+              <h4 class="name">
+                <a href="#"> <%= artist.name %> </a>
+              </h4>
+              <div class="country">
+                <%= "#{artist.state}, #{artist.country}" %>
+              </div>
+              <div class="handle">
+                <%= "@#{artist.username}" %>
+              </div>
             </div>
-            <h4 class="name">
-              <a href="#"> Name </a>
-            </h4>
-            <div class="country">
-              State, Country
-            </div>
-            <div class="handle">
-              @handle
-            </div>
-          </div>
-          <div class="artist">
-            <div class="photo">
-              <img src="<%= static_path(@conn, "/images/artists/2.jpg") %>">
-            </div>
-            <h4 class="name">
-              <a href="#"> Name </a>
-            </h4>
-            <div class="country">
-              State, Country
-            </div>
-            <div class="handle">
-              @handle
-            </div>
-          </div>
-          <div class="artist">
-            <div class="photo">
-              <img src="<%= static_path(@conn, "/images/artists/3.jpg") %>">
-            </div>
-            <h4 class="name">
-              <a href="#"> Name </a>
-            </h4>
-            <div class="country">
-              State, Country
-            </div>
-            <div class="handle">
-              @handle
-            </div>
-          </div>
-          <div class="artist">
-            <div class="photo">
-              <img src="<%= static_path(@conn, "/images/artists/4.jpg") %>">
-            </div>
-            <h4 class="name">
-              <a href="#"> Name </a>
-            </h4>
-            <div class="country">
-              State, Country
-            </div>
-            <div class="handle">
-              @handle
-            </div>
-          </div>
+          <%= end %>
         </div>
-        <a href="#" class="button button-primary">Discover Artists</a>
+        <a href="<%= artist_path(@conn, :index) %>" class="button button-primary">Discover Artists</a>
       </div>
     </div>
   </div>
