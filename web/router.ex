@@ -18,11 +18,15 @@ defmodule Inkink.Router do
   end
 
   scope "/", Inkink do
-    pipe_through [:browser, :shop_layout]
+    pipe_through [:browser]
 
     get "/", Shop.PageController, :index
     get "/artists", Shop.ArtistController, :index
     get "/artist/:artist_id", Shop.ArtistController, :show
+
+    get "/login", SessionController, :new
+    post "/login", SessionController, :create
+    get "/logout", SessionController, :delete
   end
 
   scope "/admin", Inkink, as: :admin do
