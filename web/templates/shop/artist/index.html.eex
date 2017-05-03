@@ -4,9 +4,9 @@
       <h2 class="heading section-center">
         Artists
       </h2>
-      <div class="artist-roster">
+      <div class="artist-lineup">
         <div class="artist">
-          <div class="artist-container">
+          <div class="artist-card">
             <div class="artist-details">
               <div class="photo">
                 <img src="<%= static_path(@conn, "/images/artists/1.jpg") %>">
@@ -25,7 +25,7 @@
                 </div>
               </div>
             </div>
-            <a class="artist-artworks">
+            <a class="artist-works">
               <div class="artwork"> 
                 <div class="inner"
                   style="background-image:url(<%= static_path(@conn, "/images/artwork/1.jpg") %>);">
@@ -45,7 +45,7 @@
           </div>
         </div>
         <div class="artist">
-          <div class="artist-container">
+          <div class="artist-card">
             <div class="artist-details">
               <div class="photo">
                 <img src="<%= static_path(@conn, "/images/artists/2.jpg") %>">
@@ -64,7 +64,7 @@
                 </div>
               </div>
             </div>
-            <a class="artist-artworks">
+            <a class="artist-works">
               <div class="artwork"> 
                 <div class="inner"
                   style="background-image:url(<%= static_path(@conn, "/images/artwork/4.jpg") %>);">
@@ -84,7 +84,7 @@
           </div>
         </div>
         <div class="artist">
-          <div class="artist-container">
+          <div class="artist-card">
             <div class="artist-details">
               <div class="photo">
                 <img src="<%= static_path(@conn, "/images/artists/3.jpg") %>">
@@ -103,7 +103,7 @@
                 </div>
               </div>
             </div>
-            <a class="artist-artworks">
+            <a class="artist-works">
               <div class="artwork"> 
                 <div class="inner"
                   style="background-image:url(<%= static_path(@conn, "/images/artwork/7.jpg") %>);">
