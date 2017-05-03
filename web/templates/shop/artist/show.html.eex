@@ -7,14 +7,14 @@
           <div class="artist-container">
             <div class="artist-details">
               <div class="photo">
-                <img src="<%= static_path(@conn, "/images/artists/1.jpg") %>">
+                <img src="<%= static_path(@conn, Inkink.Shop.PageView.avatar_url(@artist)) %>">
               </div>
               <div class="info">
                 <h4 class="name">
-                  Juan Bartolome
+                  <%= @artist.name %>
                 </h4>
                 <div class="country">
-                  Manila, Philippines
+                  <%= "#{@artist.state}, #{@artist.country}" %>
                 </div>
                 <div class="handle">
                   @juan
@@ -22,65 +22,30 @@
               </div>
               <div class="description">
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dapibus volutpat posuere. Nullam sit amet leo in velit interdum elementum a a metus. Curabitur congue lorem eu orci elementum aliquam. 
-                </p>
-                <p>
-                  Pellentesque lorem ipsum, faucibus id sodales id, sodales eget enim. Nunc vitae vehicula diam. Nunc dapibus iaculis consequat. 
-                  Mauris ullamcorper finibus iaculis. Quisque sodales tellus leo, sit amet fermentum neque vulputate vitae. 
-                </p>
-                <p>
-                  Donec vitae iaculis mi. Ut eleifend, nisl vitae ornare efficitur, erat urna vestibulum lorem, vel ullamcorper magna orci vitae libero. Integer sem felis, consequat ac semper sit amet, tempor varius nunc.
+                  <%= @artist.description %>
                 </p>
               </div>
             </div>
           </div>
         </div>
         <div class="artist-artworks-list">
-          <div class="artwork"> 
-            <a href="#" class="artwork-container">
-              <div class="photo"
-                style="background-image:url(<%= static_path(@conn, "/images/artwork/1.jpg") %>);">
-              </div>
-              <div class="info">
-                <h6 class="title">
-                  A Ghost in the Shell Artwork
-                </h6>
-                <div class="price">
-                  USD 4,100
+          <%= for artwork <- @artist.artworks do %>
+            <div class="artwork"> 
+              <a href="#" class="artwork-container">
+                <div class="photo"
+                  style="background-image:url(<%= static_path(@conn, Inkink.Shop.PageView.image_url(artwork)) %>);">
                 </div>
-              </div>
-            </a>
-          </div>
-          <div class="artwork"> 
-            <a href="#" class="artwork-container">
-              <div class="photo"
-                style="background-image:url(<%= static_path(@conn, "/images/artwork/1.jpg") %>);">
-              </div>
-              <div class="info">
-                <h6 class="title">
-                  A Ghost in the Shell Artwork
-                </h6>
-                <div class="price">
-                  USD 4,100
+                <div class="info">
+                  <h6 class="title">
+                    <%= artwork.name %>
+                  </h6>
+                  <div class="price">
+                    <%= "USD #{artwork.price}" %>
+                  </div>
                 </div>
-              </div>
-            </a>
-          </div>
-          <div class="artwork"> 
-            <a href="#" class="artwork-container">
-              <div class="photo"
-                style="background-image:url(<%= static_path(@conn, "/images/artwork/1.jpg") %>);">
-              </div>
-              <div class="info">
-                <h6 class="title">
-                  A Ghost in the Shell Artwork
-                </h6>
-                <div class="price">
-                  USD 4,100
-                </div>
-              </div>
-            </a>
-          </div>
+              </a>
+            </div>
+          <%= end %>
         </div>
       </div>
     </div>

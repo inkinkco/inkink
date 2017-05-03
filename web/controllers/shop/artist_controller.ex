@@ -14,7 +14,12 @@ defmodule Inkink.Shop.ArtistController do
     render conn, "index.html", artists: artists
   end
 
-  def show(conn, _params) do
-    render conn, "show.html"
+  def show(conn, %{"artist_id" => id}) do
+    artist =
+      Artist
+      |> Repo.get(id)
+      |> Repo.preload(:artworks)
+
+    render conn, "show.html", artist: artist
   end
 end

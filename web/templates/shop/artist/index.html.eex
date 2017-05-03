@@ -14,15 +14,15 @@
                 </div>
                 <div class="info">
                   <h4 class="name">
-                    <a href="<%= artist_path(@conn, :show, "juan-bartolome") %>">
-                      Juan Bartolome
+                    <a href="<%= artist_path(@conn, :show, artist) %>">
+                      <%= artist.name %>
                     </a>
                   </h4>
                   <div class="country">
-                    State, Country
+                    <%= "#{artist.state}, #{artist.country}" %>
                   </div>
                   <div class="handle">
-                    @handle
+                    <%= "@#{artist.username}" %>
                   </div>
                 </div>
               </div>
