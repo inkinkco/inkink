@@ -68,10 +68,8 @@ config :inkink, Inkink.Repo,
 
 config :arc,
   bucket: System.get_env("S3_BUCKET_ID"),
-  virtual_host: true
 
 config :ex_aws,
-  virtual_host: true,
   access_key_id: System.get_env("AWS_ID"),
   secret_access_key: System.get_env("AWS_SECRET"),
   region: System.get_env("AWS_REGION")
