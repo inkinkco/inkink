@@ -34,6 +34,7 @@ defmodule Inkink.Mixfile do
      {:arc, "~> 0.8.0"},
      {:number, "~> 0.5.1"},
      {:arc_ecto, "~> 0.7.0"},
+     {:exrm, "~> 0.15.3"},
      {:phoenix_pubsub, "~> 1.0"},
      {:phoenix_ecto, "~> 3.0"},
      {:postgrex, ">= 0.0.0"},
