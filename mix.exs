@@ -33,6 +33,7 @@ defmodule Inkink.Mixfile do
     [{:phoenix, "~> 1.2.1"},
      {:arc_ecto, "~> 0.5.0"},
      {:arc, "~> 0.6.0"},
+     {:sweet_xml, "~> 0.6.0"},
      {:number, "~> 0.5.1"},
      {:httpoison, ">= 0.7.0"},
      {:phoenix_pubsub, "~> 1.0"},

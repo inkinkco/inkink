@@ -39,7 +39,7 @@ defmodule Inkink.ArtworkController do
 
         conn
         |> put_flash(:info, "Artwork created successfully.")
-        |> redirect(to: admin_artist_artwork_path(conn, :index, artist, artwork))
+        |> redirect(to: admin_artist_artwork_path(conn, :index, artist))
       {:error, changeset} ->
         render(conn, "new.html", changeset: changeset)
     end
