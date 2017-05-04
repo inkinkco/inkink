@@ -76,6 +76,6 @@ config :ex_aws,
   region: System.get_env("AWS_REGION"),
   s3: [
     scheme: "https://",
-    host: "s3.ap-southeast-1.amazonaws.com",
+    host: "inkink-production.s3.amazonaws.com",
     region: "ap-southeast-1"
   ]
