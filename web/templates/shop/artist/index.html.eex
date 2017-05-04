@@ -10,7 +10,7 @@
             <div class="artist-card">
               <div class="artist-details">
                 <div class="photo">
-                  <img src="<%= static_path(@conn, Inkink.Shop.PageView.avatar_url(artist)) %>">
+                  <img src="<%= Inkink.Shop.PageView.avatar_url(artist) %>">
                 </div>
                 <div class="info">
                   <h4 class="name">
@@ -28,9 +28,9 @@
               </div>
               <a class="artist-works">
                 <%= for artwork <- artist.artworks do %>
-                  <div class="artwork"> 
+                  <div class="artwork">
                       <div class="inner"
-                        style="background-image:url(<%= static_path(@conn, Inkink.Shop.PageView.image_url(artwork)) %>);">
+                        style="background-image:url(<%= Inkink.Shop.PageView.image_url(artwork) %>);">
                       </div>
                   </div>
                 <%= end %>

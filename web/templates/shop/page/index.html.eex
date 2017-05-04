@@ -31,7 +31,7 @@
           <%= for artwork <- @artworks do %>
             <div class="artwork">
               <div class="inner"
-                style="background-image:url(<%= static_path(@conn, image_url(artwork)) %>);">
+                style="background-image:url(<%= image_url(artwork) %>);">
               </div>
             </div>
           <%= end %>
@@ -52,7 +52,7 @@
           <%= for artist <- @artists do %>
             <div class="artist">
               <div class="photo">
-                <img src="<%= static_path(@conn, avatar_url(artist)) %>">
+                <img src="<%= avatar_url(artist) %>">
               </div>
               <h4 class="name">
                 <a href="<%= artist_path(@conn, :show, artist) %>"> <%= artist.name %> </a>

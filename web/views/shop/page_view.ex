@@ -4,7 +4,7 @@ defmodule Inkink.Shop.PageView do
   def avatar_url(artist) do
     url = Inkink.Avatar.url({artist.avatar, artist}, :original)
     f = case Mix.env do
-      :dev -> String.replace(url, "priv/static", "")
+      :dev -> Inkink.Endpoint.static_path(String.replace(url, "priv/static", ""))
       _ -> url
     end
     raise {f, url}
@@ -13,7 +13,7 @@ defmodule Inkink.Shop.PageView do
   def image_url(artwork) do
     url = Inkink.Avatar.url({artwork.image, artwork}, :original)
     case Mix.env do
-      :dev -> String.replace(url, "priv/static", "")
+      :dev -> Inkink.Endpoint.static_path(String.replace(url, "priv/static", ""))
       _ -> url
     end
   end
