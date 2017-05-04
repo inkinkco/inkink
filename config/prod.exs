@@ -67,7 +67,7 @@ config :inkink, Inkink.Repo,
   pool_size: 10
 
 config :arc,
-  bucket: System.get_env("S3_BUCKET_ID"),
+  bucket: System.get_env("S3_BUCKET_ID")
 
 config :ex_aws,
   access_key_id: System.get_env("AWS_ID"),
