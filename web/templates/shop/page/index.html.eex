@@ -57,9 +57,9 @@
               <h4 class="name">
                 <a href="<%= artist_path(@conn, :show, artist) %>"> <%= artist.name %> </a>
               </h4>
-              <div class="country">
-                <%= "#{artist.state}, #{artist.country}" %>
-              </div>
+              <!--div class="country">
+                <--%= "#{artist.state}, #{artist.country}" %-->
+              </div-->
               <div class="handle">
                 <%= "@#{artist.username}" %>
               </div>
