@@ -3,11 +3,10 @@ defmodule Inkink.Shop.PageView do
 
   def avatar_url(artist) do
     url = Inkink.Avatar.url({artist.avatar, artist}, :original)
-    f = case Mix.env do
+    case Mix.env do
       :dev -> Inkink.Endpoint.static_path(String.replace(url, "priv/static", ""))
       _ -> url
     end
-    raise {f, url}
   end
 
   def image_url(artwork) do
