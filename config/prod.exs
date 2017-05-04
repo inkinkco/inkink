@@ -63,7 +63,7 @@ config :inkink, Inkink.Repo,
   url: System.get_env("DATABASE_URL"),
   hostname: "localhost",
   ssl: true,
-  pool_size: 18
+  pool_size: 10
 
 config :arc,
   bucket: System.get_env("S3_BUCKET_ID"),
