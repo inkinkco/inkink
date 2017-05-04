@@ -2,12 +2,18 @@ defmodule Inkink.Shop.PageView do
   use Inkink.Web, :view
 
   def avatar_url(artist) do
-    Inkink.Avatar.url({artist.avatar, artist}, :original)
-    |> String.replace("/priv/static", "")
+    url = Inkink.Avatar.url({artist.avatar, artist}, :original)
+    case Mix.env do
+      :dev -> String.replace(url, "priv/static", "")
+      _ -> url
+    end
   end
 
   def image_url(artwork) do
-    Inkink.Image.url({artwork.image, artwork}, :original)
-    |> String.replace("/priv/static", "")
+    url = Inkink.Avatar.url({artwork.image, artwork}, :original)
+    case Mix.env do
+      :dev -> String.replace(url, "priv/static", "")
+      _ -> url
+    end
   end
 end

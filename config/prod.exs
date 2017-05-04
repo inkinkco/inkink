@@ -63,4 +63,14 @@ config :inkink, Inkink.Repo,
   url: System.get_env("DATABASE_URL"),
   hostname: "localhost",
   ssl: true,
-  pool_size: 19
+  pool_size: 18
+
+config :arc,
+  bucket: System.get_env("S3_BUCKET_ID"),
+  virtual_host: true
+
+config :ex_aws,
+  virtual_host: true,
+  access_key_id: System.get_env("AWS_ID"),
+  secret_access_key: System.get_env("AWS_SECRET"),
+  region: System.get_env("AWS_REGION")

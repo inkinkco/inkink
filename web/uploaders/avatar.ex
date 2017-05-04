@@ -4,9 +4,13 @@ defmodule Inkink.Avatar do
 
   @versions [:original]
   @acl :public_read
-  @async false
 
-  def __storage, do: Arc.Storage.Local
+  def __storage do
+    case Mix.env do
+      :prod -> Arc.Storage.S3
+      _ -> Arc.Storage.Local
+    end
+  end
 
   # To add a thumbnail version:
   # @versions [:original, :thumb]
@@ -41,7 +45,7 @@ defmodule Inkink.Avatar do
   #    :content_encoding, :content_length, :content_type,
   #    :expect, :expires, :storage_class, :website_redirect_location]
   #
-  # def s3_object_headers(version, {file, scope}) do
-  #   [content_type: Plug.MIME.path(file.file_name)]
-  # end
+  def s3_object_headers(version, {file, scope}) do
+     [content_type: Plug.MIME.path(file.file_name)]
+  end
 end

@@ -5,9 +5,17 @@ defmodule Inkink.Image do
   use Arc.Ecto.Definition
 
   @versions [:original]
+  @acl :public_read
 
   # To add a thumbnail version:
   # @versions [:original, :thumb]
+
+  def __storage do
+    case Mix.env do
+      :prod -> Arc.Storage.S3
+      _ -> Arc.Storage.Local
+    end
+  end
 
   # Whitelist file extensions:
   def validate({file, _}) do
@@ -39,7 +47,7 @@ defmodule Inkink.Image do
   #    :content_encoding, :content_length, :content_type,
   #    :expect, :expires, :storage_class, :website_redirect_location]
   #
-  # def s3_object_headers(version, {file, scope}) do
-  #   [content_type: Plug.MIME.path(file.file_name)]
-  # end
+  def s3_object_headers(version, {file, scope}) do
+     [content_type: Plug.MIME.path(file.file_name)]
+  end
 end
