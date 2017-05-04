@@ -6,7 +6,7 @@ defmodule Inkink.SessionController do
   alias Authsense.Plug, as: Auth
   alias Authsense.Service, as: Authplug
 
-  plug :put_layout, {Inkink.LayoutView, "app.html"}
+  plug :put_layout, {Inkink.Shop.LayoutView, "app.html"}
 
   def new(conn, _params) do
     render(conn, "index.html")

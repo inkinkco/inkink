@@ -1,0 +1,23 @@
+<!-- Sign In -->
+<div class="signin-section section">
+  <div class="container">
+    <div class="signin-content content">
+      <h2 class="heading section-center">
+        Sign In
+      </h2>
+      <div class="signin-card">
+        <form class="signin-form">
+          <div class="signin-group">
+            <label class="label">Username</label>
+            <input class="input" type="text" name="username" placeholder="Your username here">
+          </div>
+          <div class="signin-group">
+            <label class="label">Password</label>
+            <input class="input" type="password" name="username" placeholder="Your password here">
+          </div>
+          <button type="submit" class="submit button button-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

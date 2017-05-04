@@ -3,6 +3,8 @@
   <head>
     <title>Inkink</title>
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/shop.app.css") %>">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Kanit:300,700">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.css">
   </head>
 
   <body>
