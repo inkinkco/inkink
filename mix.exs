@@ -31,8 +31,8 @@ defmodule Inkink.Mixfile do
   # Type `mix help deps` for examples and options.
   defp deps do
     [{:phoenix, "~> 1.2.1"},
-     {:arc_ecto, "~> 0.4"},
-     {:arc, "~> 0.5.2"},
+     {:arc_ecto, "~> 0.5.0"},
+     {:arc, "~> 0.6.0"},
      {:number, "~> 0.5.1"},
      {:httpoison, ">= 0.7.0"},
      {:phoenix_pubsub, "~> 1.0"},
@@ -41,7 +41,7 @@ defmodule Inkink.Mixfile do
      {:phoenix_html, "~> 2.6"},
      {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:gettext, "~> 0.11"},
-     {:ex_aws, "~> 0.4.10"},
+     {:ex_aws, "~> 1.0.0"},
      {:cowboy, "~> 1.0"}]
   end
 
