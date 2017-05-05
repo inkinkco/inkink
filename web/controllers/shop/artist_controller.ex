@@ -11,14 +11,21 @@ defmodule Inkink.Shop.ArtistController do
   def index(conn, _params) do
     random_artworks =
       Artwork
-      |> where([a], not is_nil(a.image))
       |> order_by(fragment("RANDOM()"))
-      |> limit(3)
+      |> where([a], not is_nil(a.image))
 
     artists =
       Artist
       |> Repo.all
-      |> Repo.preload(artworks: random_artworks)
+
+    preload_limit = length(artists) * 3
+
+    random_artwork_suppressed =
+      random_artworks
+      |> limit(^preload_limit)
+
+    artists = Repo.preload(artists, artworks: random_artwork_suppressed)
+
     render conn, "index.html", artists: artists
   end
 
