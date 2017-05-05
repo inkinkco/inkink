@@ -28,7 +28,7 @@
                   </div>
                 </div>
               </div>
-              <a class="artist-works">
+              <a href="<%= artist_path(@conn, :show, artist) %>" class="artist-works">
                 <%= for artwork <- artist.artworks do %>
                   <div class="artwork">
                       <div class="inner"

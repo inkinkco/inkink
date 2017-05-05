@@ -29,8 +29,12 @@ defmodule Inkink.Router do
     pipe_through [:browser]
 
     get "/", Shop.PageController, :index
+
     get "/artists", Shop.ArtistController, :index
     get "/artist/:artist_id", Shop.ArtistController, :show
+
+    get "/artworks", Shop.ArtworkController, :index
+    get "/artwork/:artwork_id", Shop.ArtworkController, :show
 
     get "/login", SessionController, :new
     post "/login", SessionController, :create

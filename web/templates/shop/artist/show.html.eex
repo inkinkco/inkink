@@ -32,7 +32,7 @@
         <div class="artist-artworks-list">
           <%= for artwork <- @artist.artworks do %>
             <div class="artwork">
-              <a href="#" class="artwork-container">
+              <a href="<%= artwork_path(@conn, :show, artwork) %>" class="artwork-container">
                 <div class="photo"
                   style="background-image:url(<%= Inkink.Shop.PageView.image_url(artwork) %>);">
                 </div>
