@@ -32,7 +32,10 @@ defmodule Inkink.Avatar do
 
   # Override the storage directory:
   def storage_dir(_version, {_file, scope}) do
-    "uploads/artist/avatars/#{scope.id}"
+    case Mix.env do
+      :prod -> "uploads/artist/avatars/#{scope.id}"
+      _ -> "priv/static/images/artist/avatars/#{scope.id}"
+    end
   end
 
   # Provide a default URL if there hasn't been a file uploaded
