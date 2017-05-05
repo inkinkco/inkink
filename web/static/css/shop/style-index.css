@@ -68,7 +68,11 @@
   color: #999999;
 }
 
-.artist-roster > .artist > .photo > img {
+.artist-roster > .artist > .photo {
+  padding-top: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   border-radius: 100%;
 }
 
