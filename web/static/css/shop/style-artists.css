@@ -45,9 +45,12 @@
   color: #999999;
 }
 
-.artist-card > .artist-details .photo > img {
+.artist-card > .artist-details > .photo {
+  padding-top: 120px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   border-radius: 100%;
-  width: 120px;
 }
 
 /* Artwork */
