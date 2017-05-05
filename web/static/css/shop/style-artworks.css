@@ -1,0 +1,55 @@
+/* Artworks Section */
+
+.artworks-gallery {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+/* Artwork */
+
+.artwork-link {
+  flex: 0 1 33.33%;
+}
+
+.artwork-link > .image {
+  position: relative;
+  padding-top: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.artwork-titleholder {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  box-sizing: border-box;
+  transition: opacity 150ms ease-in-out;
+}
+
+.artwork-titleholder:hover {
+  opacity: 1;
+}
+
+.artwork-titleholder > .title {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 16px;
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background-color: rgba(22,22,22,0.5);
+}
+
+@media screen and (max-width: 600px) {
+  .artwork-titleholder {
+    opacity: 1;
+  }
+}

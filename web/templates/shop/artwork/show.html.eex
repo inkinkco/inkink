@@ -1,0 +1,53 @@
+<!-- Artwork -->
+<div class="artwork-section section">
+  <div class="container">
+    <div class="artwork-content content">
+      <div class="artwork-card">
+        <div class="artwork-photocontainer"> 
+          <div class="image"
+               style="background-image:url(<%= Inkink.Shop.PageView.image_url(@artwork) %>);">
+          </div>
+        </div>
+        <div class="artwork-info">
+          <div class="upper">
+            <h4><%= @artwork.name %></h4>
+            <h2><%= number_to_currency(@artwork.price) %></h2>
+            <div class="artwork-calltoaction">
+              <%= if @artwork.etsy_link do %>
+                <a href="<%= @artwork.etsy_link %>" class="button button-primary">Etsy</a>
+              <%= end %>
+              <%= if @artwork.ebay_link do %>
+                <a href="<%= @artwork.ebay_link %>" class="button button-primary">Ebay</a>
+              <%= end %>
+            </div>
+          </div>
+          <div class="lower">
+            <h6>Detail</h6>
+            <ul class="artwork-info-list">
+              <li class="item">
+                <div class="key">Artist</div>
+                <div class="value"><%= @artwork.artist.name %></div>
+              </li>
+              <li class="item">
+                <div class="key">Quantity</div>
+                <div class="value">3</div>
+              </li>
+              <li class="item">
+                <div class="key">Size/Dimension</div>
+                <div class="value">14" x 24"</div>
+              </li>
+              <li class="item">
+                <div class="key">Description</div>
+                <div class="value">
+                  <p>
+                    <%= @artwork.description %>
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

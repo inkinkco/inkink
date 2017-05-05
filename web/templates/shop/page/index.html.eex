@@ -36,7 +36,7 @@
             </div>
           <%= end %>
         </div>
-        <a href="#" class="button button-primary">View Artworks</a>
+        <a href="<%= artwork_path(@conn, :index) %>" class="button button-primary">View Artworks</a>
       </div>
     </div>
   </div>

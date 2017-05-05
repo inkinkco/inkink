@@ -19,7 +19,7 @@
           <div class="header-right">
           <div class="navbar-options">
             <div class="option">
-              <a href="#" class="button">Artworks</a>
+              <a href="<%= artwork_path(@conn, :index) %>" class="button">Artworks</a>
             </div>
             <div class="option">
               <a href="<%= artist_path(@conn, :index) %>" class="button">Artists</a>
