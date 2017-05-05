@@ -24,6 +24,10 @@
   flex: 0 1 37%;
 }
 
+.value > .description {
+  white-space: pre-wrap;
+}
+
 .artwork-info > .upper:after {
   content: '';
   background-color: #1EC8BE;
