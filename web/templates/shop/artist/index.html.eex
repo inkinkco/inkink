@@ -18,7 +18,7 @@
                       <%= artist.name %>
                     </a>
                   </h4>
-                  <%= unless is_nil(artist.state) and is_nil(artist.country) do %>
+                  <%= unless is_nil(artist.state) or is_nil(artist.country) do %>
                     <div class="country">
                       <%= "#{artist.state}, #{artist.country}" %>
                     </div>
