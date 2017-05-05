@@ -29,11 +29,11 @@
         </h2>
         <div class="artwork-collage">
           <%= for artwork <- @artworks do %>
-            <div class="artwork">
+            <a href="<%= artwork_path(@conn, :show, artwork) %>" class="artwork">
               <div class="inner"
                 style="background-image:url(<%= image_url(artwork) %>);">
               </div>
-            </div>
+            </a>
           <%= end %>
         </div>
         <a href="<%= artwork_path(@conn, :index) %>" class="button button-primary">View Artworks</a>
