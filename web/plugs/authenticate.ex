@@ -1,4 +1,4 @@
-defmodule InkInk.Authenticate do
+defmodule Inkink.Authenticate do
   import Phoenix.Controller, only: [put_flash: 3, redirect: 2]
   import Plug.Conn, only: [halt: 1]
 
