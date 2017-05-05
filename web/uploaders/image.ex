@@ -34,7 +34,10 @@ defmodule Inkink.Image do
 
   #Override the storage directory:
   def storage_dir(version, {file, scope}) do
-   "uploads/artwork/images/#{scope.id}"
+    case Mix.env do
+      :prod -> "uploads/artwork/images/#{scope.id}"
+      _ -> "priv/static/images/artist/avatars/#{scope.id}"
+    end
   end
 
   # Provide a default URL if there hasn't been a file uploaded
