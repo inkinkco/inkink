@@ -1,0 +1,23 @@
+<!-- Sign In -->
+<div class="signin-section section">
+  <div class="container">
+    <div class="signin-content content">
+      <h2 class="heading section-center">
+        Sign In
+      </h2>
+      <div class="signin-card">
+        <%= form_for @changeset, session_path(@conn, :create), fn f -> %>
+          <div class="signin-group">
+            <label class="label">Username</label>
+            <%= text_input f, :email, class: "input", placeholder: "Your username here" %>
+          </div>
+          <div class="signin-group">
+            <label class="label">Password</label>
+            <%= password_input f, :password, class: "input", placeholder: "Your password here" %>
+          </div>
+          <button type="submit" class="submit button button-primary">Submit</button>
+        <%= end %>
+      </div>
+    </div>
+  </div>
+</div>

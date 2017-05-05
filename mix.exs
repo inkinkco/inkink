@@ -31,6 +31,7 @@ defmodule Inkink.Mixfile do
   # Type `mix help deps` for examples and options.
   defp deps do
     [{:phoenix, "~> 1.2.1"},
+     {:authsense, "~> 0.3.0"},
      {:arc_ecto, "~> 0.5.0"},
      {:arc, "~> 0.6.0"},
      {:sweet_xml, "~> 0.6.0"},

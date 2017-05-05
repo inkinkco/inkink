@@ -6,6 +6,8 @@ defmodule Inkink.Shop.ArtistController do
     Repo
   }
 
+  plug :put_layout, {Inkink.Shop.LayoutView, "app.html"}
+
   def index(conn, _params) do
     artists =
       Artist

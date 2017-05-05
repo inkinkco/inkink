@@ -9,6 +9,9 @@ use Mix.Config
 config :inkink,
   ecto_repos: [Inkink.Repo]
 
+config :authsense, Inkink.User,
+  repo: Inkink.Repo
+
 # Configures the endpoint
 config :inkink, Inkink.Endpoint,
   url: [host: "localhost"],
