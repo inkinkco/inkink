@@ -6,17 +6,17 @@
         Sign In
       </h2>
       <div class="signin-card">
-        <form class="signin-form">
+        <%= form_for @changeset, session_path(@conn, :create), fn f -> %>
           <div class="signin-group">
             <label class="label">Username</label>
-            <input class="input" type="text" name="username" placeholder="Your username here">
+            <%= text_input f, :username, class: "input", placeholder: "Your username here" %>
           </div>
           <div class="signin-group">
             <label class="label">Password</label>
-            <input class="input" type="password" name="username" placeholder="Your password here">
+            <%= password_input f, :password, class: "input", placeholder: "Your password here" %>
           </div>
           <button type="submit" class="submit button button-primary">Submit</button>
-        </form>
+        <%= end %>
       </div>
     </div>
   </div>
