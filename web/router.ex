@@ -13,6 +13,14 @@ defmodule Inkink.Router do
     plug :put_layout, {Inkink.Shop.LayoutView, "app.html"}
   end
 
+  pipeline :admin do
+    import Authsense.Plug, only: [fetch_current_user: 2]
+    plug :fetch_current_user, model: Inkink.User
+
+    import InkInk.Authenticate, only: [ensure_authenticated: 2]
+    plug :ensure_authenticated
+  end
+
   pipeline :api do
     plug :accepts, ["json"]
   end
@@ -30,7 +38,7 @@ defmodule Inkink.Router do
   end
 
   scope "/admin", Inkink, as: :admin do
-    pipe_through [:browser]
+    pipe_through [:browser, :admin]
 
     resources "/artists", ArtistController do
       resources "/artworks", ArtworkController

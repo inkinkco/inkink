@@ -17,8 +17,9 @@ defmodule Inkink.SessionController do
       {:ok, user} ->
         conn
         |> Authplug.put_current_user(user)
+        |> put_flash(:info, "Successfully logged in.")
         |> redirect(to: admin_artist_path(conn, :index))
-      {:error, error} ->
+      {:error, _error} ->
         conn
         |> Authplug.put_current_user(nil)
         |> put_flash(:error, "Invalid login details.")
@@ -30,6 +31,6 @@ defmodule Inkink.SessionController do
     conn
     |> Authplug.put_current_user(nil)
     |> put_flash(:info, "Successfully logged out.")
-    |> redirect(to: session_path(conn, :index))
+    |> redirect(to: session_path(conn, :new))
   end
 end
