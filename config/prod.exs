@@ -63,4 +63,18 @@ config :inkink, Inkink.Repo,
   url: System.get_env("DATABASE_URL"),
   hostname: "localhost",
   ssl: true,
-  pool_size: 19
+  pool_size: 10
+
+config :arc,
+  virtual_host: true,
+  bucket: System.get_env("S3_BUCKET_ID")
+
+config :ex_aws,
+  access_key_id: System.get_env("AWS_ID"),
+  secret_access_key: System.get_env("AWS_SECRET"),
+  region: System.get_env("AWS_REGION"),
+  s3: [
+    scheme: "https://",
+    host: "inkink-production.s3.amazonaws.com",
+    region: "ap-southeast-1"
+  ]

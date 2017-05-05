@@ -18,13 +18,14 @@ defmodule Inkink.Artist do
   end
 
   def changeset(struct, params \\ %{}) do
-    artworks = Map.get(params, "artworks") || Map.get(params, :artworks)
-
     struct
     |> cast(params, [:name, :state, :country, :description, :username])
-    |> cast_attachments(params, [:avatar])
-    |> cast_assoc(:artworks, artworks)
     |> validate_required([:name, :username])
     |> unique_constraint(:username)
+  end
+
+  def avatar_changeset(struct, params \\ %{}) do
+    struct
+    |> cast_attachments(params, [:avatar])
   end
 end

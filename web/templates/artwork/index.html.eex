@@ -31,4 +31,5 @@
   </tbody>
 </table>
 
-<%= link "New artwork", to: admin_artist_artwork_path(@conn, :new, @artist) %>
+<p> <%= link "New artwork", to: admin_artist_artwork_path(@conn, :new, @artist) %> </p>
+<p> <%= link "Back to artists", to: admin_artist_path(@conn, :index) %> </p>

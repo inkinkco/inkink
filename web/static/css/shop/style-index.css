@@ -29,11 +29,11 @@
   margin-bottom: 32px;
 }
 
-.artwork {
+.artwork-collage > .artwork {
   flex: 0 0 25%;
 }
 
-.artwork > .inner {
+.artwork-collage > .artwork > .inner {
   padding-top: 80%;
   background-size: cover;
   background-position: center;

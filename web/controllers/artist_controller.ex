@@ -17,7 +17,10 @@ defmodule Inkink.ArtistController do
     changeset = Artist.changeset(%Artist{}, artist_params)
 
     case Repo.insert(changeset) do
-      {:ok, _artist} ->
+      {:ok, artist} ->
+        changeset_with_avatar = Artist.avatar_changeset(artist, artist_params)
+        Repo.update!(changeset_with_avatar)
+
         conn
         |> put_flash(:info, "Artist created successfully.")
         |> redirect(to: admin_artist_path(conn, :index))
@@ -44,7 +47,10 @@ defmodule Inkink.ArtistController do
 
   def update(conn, %{"id" => id, "artist" => artist_params}) do
     artist = Repo.get!(Artist, id)
-    changeset = Artist.changeset(artist, artist_params)
+    changeset =
+      artist
+      |> Artist.changeset(artist_params)
+      |> Artist.avatar_changeset(artist_params)
 
     case Repo.update(changeset) do
       {:ok, artist} ->
