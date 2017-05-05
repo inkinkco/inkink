@@ -17,7 +17,7 @@ defmodule Inkink.Router do
     import Authsense.Plug, only: [fetch_current_user: 2]
     plug :fetch_current_user, model: Inkink.User
 
-    import InkInk.Authenticate, only: [ensure_authenticated: 2]
+    import Inkink.Authenticate, only: [ensure_authenticated: 2]
     plug :ensure_authenticated
   end
 
