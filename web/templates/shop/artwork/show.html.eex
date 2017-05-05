@@ -14,10 +14,10 @@
             <h2><%= number_to_currency(@artwork.price) %></h2>
             <div class="artwork-calltoaction">
               <%= if @artwork.etsy_link do %>
-                <a href="<%= @artwork.etsy_link %>" class="button button-primary">Etsy</a>
+                <a target="_tab" href="<%= @artwork.etsy_link %>" class="button button-primary">Etsy</a>
               <%= end %>
               <%= if @artwork.ebay_link do %>
-                <a href="<%= @artwork.ebay_link %>" class="button button-primary">Ebay</a>
+                <a target="_tab" href="<%= @artwork.ebay_link %>" class="button button-primary">Ebay</a>
               <%= end %>
             </div>
           </div>
