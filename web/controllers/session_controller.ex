@@ -3,8 +3,8 @@ defmodule Inkink.SessionController do
 
   alias Inkink.User
 
-  alias Authsense.Plug, as: Auth
-  alias Authsense.Service, as: Authplug
+  alias Authsense.Plug, as: Authplug
+  alias Authsense.Service, as: Auth
 
   plug :put_layout, {Inkink.Shop.LayoutView, "app.html"}
 
@@ -12,19 +12,24 @@ defmodule Inkink.SessionController do
     render(conn, "index.html", changeset: User.changeset(%User{}))
   end
 
-  def create(conn, %{"email" => email, "password" => password}) do
+  def create(conn, %{"user" => %{"email" => email, "password" => password}}) do
     case Auth.authenticate({email, password}) do
       {:ok, user} ->
-        Authplug.put_current_user(user)
-        conn |> redirect(to: admin_artist_path(conn, :index))
+        conn
+        |> Authplug.put_current_user(user)
+        |> redirect(to: admin_artist_path(conn, :index))
       {:error, error} ->
-        Authplug.put_current_user(nil)
-        render(conn, "index.html", changeset: User.changeset(%User{}))
+        conn
+        |> Authplug.put_current_user(nil)
+        |> put_flash(:error, "Invalid login details.")
+        |> render("index.html", changeset: User.changeset(%User{}))
     end
   end
 
   def delete(conn, _params) do
-    Authplug.put_current_user(nil)
-    redirect(conn, to: page_path(conn, :index))
+    conn
+    |> Authplug.put_current_user(nil)
+    |> put_flash(:info, "Successfully logged out.")
+    |> redirect(to: session_path(conn, :index))
   end
 end

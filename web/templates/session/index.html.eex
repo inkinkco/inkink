@@ -9,7 +9,7 @@
         <%= form_for @changeset, session_path(@conn, :create), fn f -> %>
           <div class="signin-group">
             <label class="label">Username</label>
-            <%= text_input f, :username, class: "input", placeholder: "Your username here" %>
+            <%= text_input f, :email, class: "input", placeholder: "Your username here" %>
           </div>
           <div class="signin-group">
             <label class="label">Password</label>
