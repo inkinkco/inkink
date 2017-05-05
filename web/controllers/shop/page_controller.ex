@@ -1,6 +1,8 @@
 defmodule Inkink.Shop.PageController do
   use Inkink.Web, :controller
 
+  plug :put_layout, {Inkink.Shop.LayoutView, "app.html"}
+
   alias Inkink.{
     Artist,
     Artwork,
