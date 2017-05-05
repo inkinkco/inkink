@@ -6,8 +6,7 @@
         <div class="artist">
           <div class="artist-container">
             <div class="artist-details">
-              <div class="photo">
-                <img src="<%= Inkink.Shop.PageView.avatar_url(@artist) %>">
+              <div class="photo" style="background-image:url(<%= Inkink.Shop.PageView.avatar_url(@artist) %>);">
               </div>
               <div class="info">
                 <h4 class="name">
@@ -33,7 +32,7 @@
         <div class="artist-artworks-list">
           <%= for artwork <- @artist.artworks do %>
             <div class="artwork">
-              <a href="#" class="artwork-container">
+              <a href="<%= artwork_path(@conn, :show, artwork) %>" class="artwork-container">
                 <div class="photo"
                   style="background-image:url(<%= Inkink.Shop.PageView.image_url(artwork) %>);">
                 </div>

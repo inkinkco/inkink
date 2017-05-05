@@ -17,7 +17,7 @@ defmodule Inkink.Router do
     import Authsense.Plug, only: [fetch_current_user: 2]
     plug :fetch_current_user, model: Inkink.User
 
-    import InkInk.Authenticate, only: [ensure_authenticated: 2]
+    import Inkink.Authenticate, only: [ensure_authenticated: 2]
     plug :ensure_authenticated
   end
 
@@ -29,8 +29,12 @@ defmodule Inkink.Router do
     pipe_through [:browser]
 
     get "/", Shop.PageController, :index
+
     get "/artists", Shop.ArtistController, :index
     get "/artist/:artist_id", Shop.ArtistController, :show
+
+    get "/artworks", Shop.ArtworkController, :index
+    get "/artwork/:artwork_id", Shop.ArtworkController, :show
 
     get "/login", SessionController, :new
     post "/login", SessionController, :create

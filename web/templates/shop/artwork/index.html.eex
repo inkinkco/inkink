@@ -1,0 +1,24 @@
+<!-- Artworks -->
+<div class="artworks-section section">
+  <div class="container">
+    <div class="artworks-content content">
+      <h2 class="heading section-center">
+        Artworks
+      </h2>
+      <div class="artworks-gallery">
+        <%= for artwork <- @artworks do %>
+          <a href="<%= artwork_path(@conn, :show, artwork) %>" class="artwork-link">
+            <div class="image"
+                 style="background-image:url(<%= Inkink.Shop.PageView.image_url(artwork) %>);">
+              <div class="artwork-titleholder">
+                <div class="title">
+                  <%= artwork.name %>
+                </div>
+              </div>
+            </div>
+          </a>
+        <%= end %>
+      </div>
+    </div>
+  </div>
+</div>
