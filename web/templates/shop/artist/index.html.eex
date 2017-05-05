@@ -18,9 +18,11 @@
                       <%= artist.name %>
                     </a>
                   </h4>
-                  <div class="country">
-                    <%= "#{artist.state}, #{artist.country}" %>
-                  </div>
+                  <%= unless is_nil(artist.state) and is_nil(artist.country) do %>
+                    <div class="country">
+                      <%= "#{artist.state}, #{artist.country}" %>
+                    </div>
+                  <%= end %>
                   <div class="handle">
                     <%= "@#{artist.username}" %>
                   </div>
