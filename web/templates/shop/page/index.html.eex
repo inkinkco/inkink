@@ -51,8 +51,7 @@
         <div class="artist-roster">
           <%= for artist <- @artists do %>
             <div class="artist">
-              <div class="photo">
-                <img src="<%= avatar_url(artist) %>">
+              <div class="photo" style="background-image:url(<%= avatar_url(artist) %>);"> 
               </div>
               <h4 class="name">
                 <a href="<%= artist_path(@conn, :show, artist) %>"> <%= artist.name %> </a>
