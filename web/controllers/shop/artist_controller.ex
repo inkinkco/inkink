@@ -9,16 +9,11 @@ defmodule Inkink.Shop.ArtistController do
   plug :put_layout, {Inkink.Shop.LayoutView, "app.html"}
 
   def index(conn, _params) do
-    random_artworks =
-      Artwork
-      |> where([a], not is_nil(a.image))
-      |> order_by(fragment("RANDOM()"))
-      |> limit(3)
-
     artists =
       Artist
       |> Repo.all
-      |> Repo.preload(artworks: random_artworks)
+      |> Repo.preload(:artworks)
+
     render conn, "index.html", artists: artists
   end
 
