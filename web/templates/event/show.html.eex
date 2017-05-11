@@ -1,0 +1,23 @@
+<h2>Show event</h2>
+
+<ul>
+
+  <li>
+    <strong>Title:</strong>
+    <%= @event.title %>
+  </li>
+
+  <li>
+    <strong>Text:</strong>
+    <%= @event.text %>
+  </li>
+
+  <li>
+    <strong>Banner:</strong>
+    <%= @event.banner %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: admin_event_path(@conn, :edit, @event) %>
+<%= link "Back", to: admin_event_path(@conn, :index) %>

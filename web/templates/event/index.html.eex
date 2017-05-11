@@ -1,0 +1,30 @@
+<h2>Listing events</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Text</th>
+      <th>Banner</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for event <- @events do %>
+    <tr>
+      <td><%= event.title %></td>
+      <td><%= event.text %></td>
+      <td><%= event.banner %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: admin_event_path(@conn, :show, event), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: admin_event_path(@conn, :edit, event), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: admin_event_path(@conn, :delete, event), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New event", to: admin_event_path(@conn, :new) %>

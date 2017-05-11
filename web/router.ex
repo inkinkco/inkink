@@ -48,6 +48,7 @@ defmodule Inkink.Router do
       resources "/artworks", ArtworkController
     end
     resources "/artworks", ArtworkController
+    resources "/events", EventController
   end
 
   # Other scopes may use custom stacks.
