@@ -1,12 +1,13 @@
 defmodule Inkink.Event do
   use Inkink.Web, :model
+  use Arc.Ecto.Schema
 
   @primary_key {:id, :binary_id, autogenerate: true}
   @foreign_key_type :binary_id
   schema "events" do
     field :title, :string
     field :text, :string
-    field :banner, :string
+    field :banner, Inkink.Banner.Type
 
     timestamps()
   end
@@ -16,7 +17,12 @@ defmodule Inkink.Event do
   """
   def changeset(struct, params \\ %{}) do
     struct
-    |> cast(params, [:title, :text, :banner])
-    |> validate_required([:title, :text, :banner])
+    |> cast(params, [:title, :text])
+    |> validate_required([:title, :text])
+  end
+
+  def banner_changeset(struct, params \\ %{}) do
+    struct
+    |> cast_attachments(params, [:banner])
   end
 end
