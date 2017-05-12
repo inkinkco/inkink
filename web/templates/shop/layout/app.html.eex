@@ -25,7 +25,7 @@
               <a href="<%= artist_path(@conn, :index) %>" class="button">Artists</a>
             </div>
             <div class="option">
-              <a href="#" class="button">Events</a>
+              <a href="<%= event_path(@conn, :index) %>" class="button">Events</a>
             </div>
             <div class="option">
               <a href="#" class="button">About</a>

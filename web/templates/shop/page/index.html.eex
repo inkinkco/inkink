@@ -11,7 +11,7 @@
             <%= @hero.text %>
           </p>
         </div>
-        <a href="#" class="button button-primary">Read More</a>
+        <a href="<%= event_path(@conn, :show, @hero) %>" class="button button-primary">Read More</a>
       </div>
     </div>
   </div>
@@ -86,9 +86,9 @@
                       21
                     </div>
                   </div>
-                  <div class="name">
+                  <a href="<%= event_path(@conn, :show, event) %>" class="name">
                     <%= event.title %>
-                  </div>
+                  </a>
                 </div>
                 <div class="event-image" style="background-image:url(<%= banner_url(event, :thumb) %>")> 
                 </div>
@@ -98,7 +98,7 @@
             </div>
           <%= end %>
         </div>
-        <a href="#" class="button button-primary">See More Events</a>
+        <a href="<%= event_path(@conn, :index) %>" class="button button-primary">See More Events</a>
       </div>
     </div>
   </div>

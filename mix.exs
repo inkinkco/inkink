@@ -19,7 +19,7 @@ defmodule Inkink.Mixfile do
   def application do
     [mod: {Inkink, []},
      applications: [:phoenix, :phoenix_pubsub, :phoenix_html, :cowboy, :logger, :gettext,
-                    :phoenix_ecto, :postgrex, :httpoison]]
+                    :phoenix_ecto, :postgrex, :httpoison, :timex_ecto]]
   end
 
   # Specifies which paths to compile per environment.
@@ -35,6 +35,8 @@ defmodule Inkink.Mixfile do
      {:arc_ecto, "~> 0.5.0"},
      {:arc, "~> 0.6.0"},
      {:sweet_xml, "~> 0.6.0"},
+     {:timex, "~> 3.0"},
+     {:timex_ecto, "~> 3.0"},
      {:number, "~> 0.5.1"},
      {:httpoison, ">= 0.7.0"},
      {:phoenix_pubsub, "~> 1.0"},
