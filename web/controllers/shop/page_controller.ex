@@ -6,6 +6,7 @@ defmodule Inkink.Shop.PageController do
   alias Inkink.{
     Artist,
     Artwork,
+    Event,
     Repo
   }
 
@@ -24,6 +25,14 @@ defmodule Inkink.Shop.PageController do
     |> limit(12)
     |> Repo.all
 
-    render(conn, "index.html", artists: artists, artworks: artworks)
+    events =
+    Event
+    |> order_by(:inserted_at)
+    |> limit(4)
+    |> Repo.all
+
+    hero = hd(events)
+
+    render(conn, "index.html", artists: artists, artworks: artworks, events: events, hero: hero)
   end
 end

@@ -20,4 +20,12 @@ defmodule Inkink.Shop.PageView do
       _ -> String.replace(url, "uploads", "inkink-production/uploads", global: false)
     end
   end
+
+  def banner_url(event, img_type) do
+    url = Inkink.Banner.url({event.banner, event}, img_type)
+    case Mix.env do
+      :dev -> Inkink.Endpoint.static_path(String.replace(url, "/priv/static", ""))
+      _ -> String.replace(url, "uploads", "inkink-production/uploads", global: false)
+    end
+  end
 end

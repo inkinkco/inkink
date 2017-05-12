@@ -15,7 +15,6 @@
     <tr>
       <td><%= event.title %></td>
       <td><%= event.text %></td>
-      <td><%= event.banner %></td>
 
       <td class="text-right">
         <%= link "Show", to: admin_event_path(@conn, :show, event), class: "btn btn-default btn-xs" %>

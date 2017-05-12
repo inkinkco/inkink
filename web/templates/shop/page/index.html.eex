@@ -1,18 +1,14 @@
   <!-- Hero -->
   <div class="hero-section section"
-
-    style="background-image: url(<%= static_path(@conn, "/images/hero/1.jpg") %>);">
+    style="background-image: url(<%= banner_url(@hero, :original)%>);">
     <div class="container">
       <div class="hero-content content">
         <h1 class="heading heading-left">
-          Inkink Collectibles at Doujin Market 2017
+          <%= @hero.title %>
         </h1>
         <div class="excerpt">
           <p>
-            We will be exhibiting at this year Doujin Market 2017 at Suntec Singapore Convention and Exhibition Centre's Level 3 Concourse from 6-7 May!
-          </p>
-          <p>
-            Catch amazing artists in our booth doing what they do best with their mastery in digital illustration. Don't miss out.
+            <%= @hero.text %>
           </p>
         </div>
         <a href="#" class="button button-primary">Read More</a>
@@ -78,74 +74,29 @@
           Upcoming Events
         </h2>
         <div class="event-cards">
-          <div class="event">
-            <div class="event-info">
-              <div class="event-details">
-                <div class="date">
-                  <div class="month">
-                    DEC
+          <%= for event <- @events do %>
+            <div class="event">
+              <div class="event-info">
+                <div class="event-details">
+                  <div class="date">
+                    <div class="month">
+                      DEC
+                    </div>
+                    <div class="day">
+                      21
+                    </div>
                   </div>
-                  <div class="day">
-                    21
-                  </div>
-                </div>
-                <div class="name">
-                  Rainbow Candy Girls : Inkink Art Exhibition 
-                </div>
-              </div>
-              <div class="event-image" style="background-image:url(<%= static_path(@conn, "/images/events/1.jpg") %>")> 
-              </div>
-            </div>
-            <div class="event-background">
-              
-            </div>
-          </div>
-          <div class="event">
-            <div class="event-info">
-              <div class="event-details">
-                <div class="date">
-                  <div class="month">
-                    DEC
-                  </div>
-                  <div class="day">
-                    21
+                  <div class="name">
+                    <%= event.title %>
                   </div>
                 </div>
-                <div class="name">
-                  Rainbow Candy Girls : Inkink Art Exhibition 
+                <div class="event-image" style="background-image:url(<%= banner_url(event, :thumb) %>")> 
                 </div>
               </div>
-              <div class="event-image"
-                style="background-image:url(<%= static_path(@conn, "/images/events/2.jpg") %>")> 
+              <div class="event-background">
               </div>
             </div>
-            <div class="event-background">
-              
-            </div>
-          </div>
-          <div class="event">
-            <div class="event-info">
-              <div class="event-details">
-                <div class="date">
-                  <div class="month">
-                    DEC
-                  </div>
-                  <div class="day">
-                    21
-                  </div>
-                </div>
-                <div class="name">
-                  Rainbow Candy Girls : Inkink Art Exhibition 
-                </div>
-              </div>
-              <div class="event-image"
-                style="background-image:url(<%= static_path(@conn, "/images/events/3.jpg") %>">
-              </div>
-            </div>
-            <div class="event-background">
-              
-            </div>
-          </div>
+          <%= end %>
         </div>
         <a href="#" class="button button-primary">See More Events</a>
       </div>

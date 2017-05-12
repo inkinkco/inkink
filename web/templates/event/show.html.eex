@@ -12,11 +12,6 @@
     <%= @event.text %>
   </li>
 
-  <li>
-    <strong>Banner:</strong>
-    <%= @event.banner %>
-  </li>
-
 </ul>
 
 <%= link "Edit", to: admin_event_path(@conn, :edit, @event) %>
