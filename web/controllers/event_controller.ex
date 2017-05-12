@@ -17,7 +17,10 @@ defmodule Inkink.EventController do
     changeset = Event.changeset(%Event{}, event_params)
 
     case Repo.insert(changeset) do
-      {:ok, _event} ->
+      {:ok, event} ->
+        changeset_with_banner = Event.banner_changeset(event, event_params)
+        Repo.update!(changeset_with_banner)
+
         conn
         |> put_flash(:info, "Event created successfully.")
         |> redirect(to: admin_event_path(conn, :index))
@@ -39,7 +42,10 @@ defmodule Inkink.EventController do
 
   def update(conn, %{"id" => id, "event" => event_params}) do
     event = Repo.get!(Event, id)
-    changeset = Event.changeset(event, event_params)
+    changeset =
+      event
+      |> Event.changeset(event_params)
+      |> Event.banner_changeset(event_params)
 
     case Repo.update(changeset) do
       {:ok, event} ->
