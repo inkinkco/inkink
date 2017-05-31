@@ -36,8 +36,8 @@ defmodule Inkink.Router do
     get "/artworks", Shop.ArtworkController, :index
     get "/artwork/:artwork_id", Shop.ArtworkController, :show
 
-    get "events", Shop.EventController, :index
-    get "event/:event_id", Shop.EventController, :show
+    get "/events", Shop.EventController, :index
+    get "/event/:event_id", Shop.EventController, :show
 
     get "/login", SessionController, :new
     post "/login", SessionController, :create
