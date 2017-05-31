@@ -8,6 +8,8 @@ defmodule Inkink.Event do
     field :title, :string
     field :text, :string
     field :banner, Inkink.Banner.Type
+    field :start, Timex.Ecto.DateTime
+    field :end, Timex.Ecto.DateTime
 
     timestamps()
   end
@@ -17,8 +19,8 @@ defmodule Inkink.Event do
   """
   def changeset(struct, params \\ %{}) do
     struct
-    |> cast(params, [:title, :text])
-    |> validate_required([:title, :text])
+    |> cast(params, [:title, :text, :start, :end])
+    |> validate_required([:title, :text, :start, :end])
   end
 
   def banner_changeset(struct, params \\ %{}) do
