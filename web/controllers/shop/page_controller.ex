@@ -31,8 +31,11 @@ defmodule Inkink.Shop.PageController do
     |> limit(4)
     |> Repo.all
 
-    hero = hd(events)
+    hero = get_hero(events)
 
     render(conn, "index.html", artists: artists, artworks: artworks, events: events, hero: hero)
   end
+
+  defp get_hero([]), do: nil
+  defp get_hero(events) when is_list(events), do: hd(events)
 end

@@ -1,20 +1,22 @@
-  <!-- Hero -->
-  <div class="hero-section section"
-    style="background-image: url(<%= banner_url(@hero, :original)%>);">
-    <div class="container">
-      <div class="hero-content content">
-        <h1 class="heading heading-left">
-          <%= @hero.title %>
-        </h1>
-        <div class="excerpt">
-          <p>
-            <%= @hero.text %>
-          </p>
+<!-- Hero -->
+  <%= unless is_nil(@hero) do %>
+    <div class="hero-section section"
+      style="background-image: url(<%= banner_url(@hero, :original)%>);">
+      <div class="container">
+        <div class="hero-content content">
+          <h1 class="heading heading-left">
+            <%= @hero.title %>
+          </h1>
+          <div class="excerpt">
+            <p>
+              <%= @hero.text %>
+            </p>
+          </div>
+          <a href="<%= event_path(@conn, :show, @hero) %>" class="button button-primary">Read More</a>
         </div>
-        <a href="<%= event_path(@conn, :show, @hero) %>" class="button button-primary">Read More</a>
       </div>
     </div>
-  </div>
+  <%= end %>
 
   <!-- Artworks -->
   <div class="artworks-section section section-center">
