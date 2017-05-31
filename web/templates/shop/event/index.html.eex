@@ -1,0 +1,93 @@
+<!-- Events -->
+<div class="events-section section">
+  <div class="container">
+    <div class="events-content content">
+      <h2 class="heading section-center">
+        Events
+      </h2>
+      <div class="event-list">
+        <div class="event">
+          <div class="event-photo">
+            <img src="assets/img/events/1.jpg">
+          </div>
+          <div class="event-container">
+            <div class="event-info">
+              <div class="date">
+                <div class="month">
+                  DEC
+                </div>
+                <div class="day">
+                  21
+                </div>
+              </div>
+              <div class="info">
+                <h6 class="name">
+                  <a href="event.html">
+                    Rainbow Candy Girls : Inkink Art Exhibition
+                  </a>
+                </h6>
+                <div class="country">
+                  Singapore, Singapore
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="event">
+          <div class="event-photo">
+            <img src="assets/img/events/2.jpg">
+          </div>
+          <div class="event-container">
+            <div class="event-info">
+              <div class="date">
+                <div class="month">
+                  DEC
+                </div>
+                <div class="day">
+                  21
+                </div>
+              </div>
+              <div class="info">
+                <h6 class="name">
+                  <a href="event.html">
+                    Rainbow Candy Girls : Inkink Art Exhibition
+                  </a>
+                </h6>
+                <div class="country">
+                  Singapore, Singapore
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="event">
+          <div class="event-photo">
+            <img src="assets/img/events/3.jpg">
+          </div>
+          <div class="event-container">
+            <div class="event-info">
+              <div class="date">
+                <div class="month">
+                  DEC
+                </div>
+                <div class="day">
+                  21
+                </div>
+              </div>
+              <div class="info">
+                <h6 class="name">
+                  <a href="event.html">
+                    Rainbow Candy Girls : Inkink Art Exhibition
+                  </a>
+                </h6>
+                <div class="country">
+                  Singapore, Singapore
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

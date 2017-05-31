@@ -1,0 +1,57 @@
+/* Events Section */
+
+.event-list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.event-list > .event {
+  flex: 0 0 49%;
+  margin-bottom: 24px;
+}
+
+.event-photo > img {
+  display: block;
+}
+
+.event-container {
+  padding: 16px;
+  background-color: #292929;
+}
+
+.event-info {
+  display: flex;
+}
+
+.event-info > .date {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  flex: 0 1 64px;
+  line-height: 20px;
+  font-weight: 700;
+}
+
+.event-info > .date > .day {
+  font-size: 27px;
+  line-height: 27px;
+}
+
+.event-info > .info {
+  flex: 1;
+}
+
+.event-info > .info > .name {
+  margin-bottom: 4px;
+}
+
+.event-info > .info > .name:hover {
+  text-decoration: underline;
+}
+
+.event-info > .info > .country{
+  color: #999999;
+}
